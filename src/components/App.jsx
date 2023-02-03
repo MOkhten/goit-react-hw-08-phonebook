@@ -19,12 +19,12 @@ export function App() {
   return (
     <>
    <Routes>
-        <Route exact path="/" component={<Layout />} />
+        <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         {/* <Route path="/register" component={RegisterView} /> */}
         <Route path="/login" component={<Login/>} />
         
-          
+        </Route>
       </Routes>
     </>
   //    <Phonebook>
