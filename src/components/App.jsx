@@ -1,10 +1,10 @@
 
-import { ContactList } from './ContactList/ContactList';
-import { ContactForm } from './ContactForm/ContactForm';
-import { Filter } from './Filter/Filter';
-import { Phonebook } from './App.styled';
+// import { ContactList } from './ContactList/ContactList';
+// import { ContactForm } from './ContactForm/ContactForm';
+// import { Filter } from './Filter/Filter';
+// import { Phonebook } from './App.styled';
 import { Route, Routes} from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 // import Login from 'pages/Login';
 import Home from 'pages/Home';
 import Layout from './Layout/Layout';
@@ -16,7 +16,7 @@ const RegisterPage = lazy(() => import('pages/Register'));
 
 
 export function App() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   
   return (
     <>
