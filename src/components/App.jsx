@@ -23,7 +23,7 @@ export function App() {
         <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         {/* <Route path="/register" component={RegisterView} /> */}
-        <Route path="/login" component={<LoginPage/>} />
+        <Route path="/login" element={<LoginPage/>} />
         
         </Route>
       </Routes>
