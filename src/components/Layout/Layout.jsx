@@ -14,7 +14,7 @@ const Layout = () => {
           Home
         </StyledLink>
         <StyledLink to="/login">Login</StyledLink>
-                
+        <StyledLink to="/register">Register</StyledLink>
           </nav>
         </Header>
          <Suspense fallback={<Loader/>}>

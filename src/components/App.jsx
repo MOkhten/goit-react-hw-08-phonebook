@@ -12,6 +12,7 @@ import { lazy } from 'react';
 
 
 const LoginPage = lazy(() => import('pages/Login'));
+const RegisterPage = lazy(() => import('pages/Register'));
 
 
 export function App() {
@@ -22,7 +23,7 @@ export function App() {
    <Routes>
         <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        {/* <Route path="/register" component={RegisterView} /> */}
+        <Route path="/register" element={<RegisterPage/>} />
         <Route path="/login" element={<LoginPage/>} />
         
         </Route>
