@@ -4,7 +4,7 @@ import axios from 'axios';
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
 const loginUser = createAsyncThunk(
-  'auth/login',
+  'auth/loginUser',
   async (credentials, thunkAPI) => {
     try {
       const response = await axios.post('/users/login', credentials);
@@ -16,7 +16,7 @@ const loginUser = createAsyncThunk(
 );
 
 const registerUser = createAsyncThunk(
-  'auth/register',
+  'auth/registerUser',
   async (credentials, thunkAPI) => {
     try {
       const response = await axios.post('/users/signup', credentials);
