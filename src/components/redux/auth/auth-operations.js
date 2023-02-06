@@ -3,20 +3,23 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
-const setAuthHeader = token => {
-  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+const token = {
+  set(token) {
+    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  },
+  unset() {
+    axios.defaults.headers.common.Authorization = '';
+  },
 };
 
-const clearAuthHeader = () => {
-  axios.defaults.headers.common.Authorization = '';
-};
 
-const loginUser = createAsyncThunk(
+
+export const loginUser = createAsyncThunk(
   'auth/loginUser',
   async (credentials, thunkAPI) => {
     try {
       const responсe = await axios.post('/users/login', credentials);
-      setAuthHeader(responсe.data.token);
+      token.set(responсe.data.token);
       return responсe.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -24,12 +27,12 @@ const loginUser = createAsyncThunk(
   }
 );
 
-const registerUser = createAsyncThunk(
+export const registerUser = createAsyncThunk(
   'auth/registerUser',
   async (credentials, thunkAPI) => {
     try {
       const responсe = await axios.post('/users/signup', credentials);
-      setAuthHeader(responсe.data.token);
+      token.set(responсe.data.token);
       return responсe.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -37,19 +40,12 @@ const registerUser = createAsyncThunk(
   }
 );
 
-const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
+export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
     await axios.post('/users/logout');
-     clearAuthHeader();
+    token.unset();
   } catch (e) {
     return thunkAPI.rejectWithValue(e.message);
     }
 });
 
-const operations = {
-  registerUser,
-  logOut,
-  loginUser,
-  // fetchCurrentUser,
-};
-export default operations;

@@ -12,12 +12,13 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useDispatch } from 'react-redux';
-import { authOperations } from '../components/redux/auth';
+import { registerUser } from 'components/redux/auth/auth-operations';
 
 const theme = createTheme();
 
 const Register = () => {
-    const dispatch = useDispatch;
+    const dispatch = useDispatch();
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -26,7 +27,7 @@ const Register = () => {
             email: data.get('email'),
             password: data.get('password'),
         };
-        dispatch(authOperations.registerUser(credentials))
+        dispatch(registerUser(credentials))
             .unwrap()
             .then(() => { })
             .catch(e => { })

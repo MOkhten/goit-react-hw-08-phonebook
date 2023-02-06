@@ -4,8 +4,7 @@
 // import { Filter } from './Filter/Filter';
 // import { Phonebook } from './App.styled';
 import { Route, Routes} from 'react-router-dom';
-// import { useDispatch } from 'react-redux';
-// import Login from 'pages/Login';
+import { useDispatch } from 'react-redux';
 import Home from 'pages/Home';
 import Layout from './Layout/Layout';
 import { lazy } from 'react';
@@ -16,7 +15,7 @@ const RegisterPage = lazy(() => import('pages/Register'));
 
 
 export function App() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   
   return (
     <>
