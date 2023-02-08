@@ -1,13 +1,11 @@
-import { Header, Container} from './Layout.styled.js';
-// import { Outlet } from 'react-router-dom';
-import { Suspense } from "react";
+import { Header, Container} from './AppBar.styled.js';
 import { Loader } from 'components/Loader.js';
 import AuthNav from '../NavLink/NavLink.jsx';
 import UserMenu from 'components/UserMenu/UserMenu.jsx';
 import { useAuth } from 'hooks/useAuth.js';
 import Navigation from 'components/Navigation/Navigation.jsx';
 
-const Layout = () => {
+const AppBar = () => {
   const { isLoggedIn } = useAuth();
     return (
       <Container>
@@ -16,11 +14,10 @@ const Layout = () => {
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
 
         </Header>
-              <Suspense fallback={<Loader/>}>
-        </Suspense>
+       
       </Container>
 
 )
 };
 
-export default Layout;
+export default AppBar;
