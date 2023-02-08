@@ -8,7 +8,7 @@ const UserMenu = () => {
     const { user } = useAuth();
 
   return (
-    <div display='flex' gridGap='8px' alignItems='center'>
+    <div display='flex'>
       <h1>Welcome, {user.name}</h1>
       <ImUserCheck color='#111111' size='24px'/>
       <button type="button" onClick={() => dispatch(logOut())}>Logout</button>

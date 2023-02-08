@@ -1,35 +1,28 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import { useSelector } from "react-redux";
+
 import { ContactItem } from '../ContactItem/ContactItem';
 import { ContactGroup, Item } from '../ContactList/ContactList.styled';
-import { useSelector } from "react-redux";
-import { selectFilteredContacts } from "components/redux/selector";
-
+import { selectFilteredContacts, selectContacts } from "components/redux/selector";
 
 export const ContactList = () => {
-  const contacts = useSelector(selectFilteredContacts);
-  
+   const filteredContacts = useSelector(selectFilteredContacts);
+  const contacts = useSelector(selectContacts);
+
   return (
     <ContactGroup >
-        {contacts.map(({ id, name, number }) => {
+      {contacts.length > 0 &&
+        filteredContacts.map(({ id, name, phone }) => {
         return (
           <Item  key={id}>
             <ContactItem
               id={id}
               name={name}
-              number={number}
+              number={phone}
             />
           </Item>
         );
       })}
     </ContactGroup>
   );
-};
-
-ContactList.propTypes = {
- contacts: PropTypes.arrayOf(PropTypes.exact({
-        id: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-        number: PropTypes.string.isRequired, 
- })),
 };
