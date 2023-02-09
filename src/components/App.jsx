@@ -5,7 +5,8 @@ import Home from 'pages/Home';
 import Layout from './Layout';
 import { lazy } from 'react';
 import { fetchCurrentUser } from './redux/auth/auth-operations';
-import { useAuth } from 'hooks/useAuth';
+// import { useAuth } from 'hooks/useAuth';
+import { RestrictedRoute } from './RestrictedRoute';
 
 const LoginPage = lazy(() => import('pages/Login'));
 const RegisterPage = lazy(() => import('pages/Register'));
@@ -24,8 +25,14 @@ export function App() {
    <Routes>
         <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="/register" element={<RegisterPage/>} /> 
-        <Route path="/login" element={<LoginPage/>} />
+        <Route path="/register" element={<RestrictedRoute
+                redirectTo="/contacts"
+                component={<RegisterPage />}/>} />
+        <Route  path="/login"
+            element={
+              <RestrictedRoute
+                redirectTo="/contacts"
+                component={<LoginPage />}/>} />
         <Route path="/contacts" element={<ContactPage/>} />
         </Route>
       </Routes>

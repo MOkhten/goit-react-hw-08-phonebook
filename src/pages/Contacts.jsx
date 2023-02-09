@@ -5,7 +5,7 @@ import { ContactList } from 'components/ContactList';
 import { Filter } from 'components/Filter';
 import { Loader } from 'components/Loader';
 import { selectError, selectIsLoading } from 'components/redux/selector';
-import { fetchContacts } from 'components/redux/contacts.thunk';
+import { fetchContacts } from 'components/redux/contactsThunk';
 
 const Contacts = () => {
     const isLoading = useSelector(selectIsLoading);

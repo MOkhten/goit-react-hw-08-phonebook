@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Form, FormTitle, Button, Input } from './ContactForm.styled';
 import { useSelector, useDispatch } from "react-redux";
-import { addContact } from 'components/redux/contacts.thunk';
+import { addContact } from 'components/redux/contactsThunk';
 
 
 export function ContactForm() {

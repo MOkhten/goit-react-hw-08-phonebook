@@ -31,6 +31,7 @@ const Login = () => {
       .then(() => { })
       .catch(e => { })
       .finally();
+    console.log(credentials)
     event.currentTarget.reset();
   
   };
