@@ -33,7 +33,7 @@ export function ContactForm() {
     dispatch(
         addContact({
           name,
-          phone: number,
+          number,
         })
       );
     

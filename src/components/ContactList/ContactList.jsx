@@ -12,13 +12,13 @@ export const ContactList = () => {
   return (
     <ContactGroup >
       {contacts.length > 0 &&
-        filteredContacts.map(({ id, name, phone }) => {
+        filteredContacts.map(({ id, name, number }) => {
         return (
           <Item  key={id}>
             <ContactItem
               id={id}
               name={name}
-              number={phone}
+              number={number}
             />
           </Item>
         );

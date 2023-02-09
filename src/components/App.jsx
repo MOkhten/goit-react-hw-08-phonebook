@@ -5,6 +5,7 @@ import Home from 'pages/Home';
 import Layout from './Layout';
 import { lazy } from 'react';
 import { fetchCurrentUser } from './redux/auth/auth-operations';
+import { useAuth } from 'hooks/useAuth';
 
 const LoginPage = lazy(() => import('pages/Login'));
 const RegisterPage = lazy(() => import('pages/Register'));
@@ -19,7 +20,7 @@ export function App() {
   }, [dispatch]);
   
   return (
-    <>
+    
    <Routes>
         <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
@@ -28,8 +29,7 @@ export function App() {
         <Route path="/contacts" element={<ContactPage/>} />
         </Route>
       </Routes>
-    </>
-  
-  )
+    
+    )
 
 }
