@@ -1,4 +1,5 @@
 import React from 'react';
+import { Title, Features, Container } from '../pages/Home.styled';
 
 const styles = {
   container: {
@@ -15,14 +16,25 @@ const styles = {
 };
 
 const Home = () => (
-  <div style={styles.container}>
-    <h1 style={styles.title}>
-      Приветственная страница нашего сервиса{' '}
-      <span role="img" aria-label="Иконка приветствия">
+  <Container>
+    <Title>
+      Welcome to Phonebook application for both desktop and mobile devices.
+
+It provides a central place for starting conversations. Depending on the information available about a contact, respective actions are displayed.
+
+Features:
+
+      <ul>
+        <Features>Add contacts</Features>
+        <Features>Remove contacts</Features>
+        <Features>Find the contact</Features>
+      </ul>
+      </Title>
+      {/* <span role="img" aria-label="Иконка приветствия">
         💁‍♀️
-      </span>
-    </h1>
-  </div>
+      </span> */}
+    
+  </Container>
 );
 
 export default Home;

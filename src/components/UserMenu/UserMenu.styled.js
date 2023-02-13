@@ -13,13 +13,12 @@ export const Button = styled.button`
     position: relative;
     box-sizing: border-box;
     margin: 0 0 30px 20px;
-    /* padding-bottom: 40px; */
     cursor: pointer;
     text-decoration: none;
     background-color: white;
     border-color: transparent;
     font-family: "Roboto","Helvetica","Arial",sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 0.875rem;
     line-height: 1.75;
     letter-spacing: 0.02857em;

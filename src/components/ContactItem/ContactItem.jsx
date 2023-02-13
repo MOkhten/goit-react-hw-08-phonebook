@@ -1,8 +1,8 @@
     import PropTypes from 'prop-types';
 import { useDispatch} from 'react-redux';
-import { ItemInfo, Button } from '../ContactItem/ContactItem.styles';
+import { ItemInfo } from '../ContactItem/ContactItem.styles';
 import { deleteContact } from '../redux/contactsThunk';
-
+import Button from '@mui/material/Button';
 
 export const ContactItem = ({ name, number, id }) => {
   const dispatch = useDispatch(); 
@@ -13,7 +13,7 @@ export const ContactItem = ({ name, number, id }) => {
     <>
       <ItemInfo>{name}</ItemInfo>
       <ItemInfo>{number}</ItemInfo>
-      <Button
+      <Button variant="contained"
         type="button"
         onClick={onDeleteContact}
       >

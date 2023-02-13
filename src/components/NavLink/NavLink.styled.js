@@ -13,8 +13,8 @@ export const StyledLink = styled(NavLink)`
     white-space: nowrap;
     color:  #FFFFFF;
     margin-right: 16px;
-    font-family: monospace;
-    font-weight: 700;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-weight: 500;
     
     
 `;

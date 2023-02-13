@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 
-export const Label = styled.label`
-color: #1976d2;
+export const Title = styled.p`
 font-family: "Roboto","Helvetica","Arial",sans-serif;
-    font-weight: 700;
+    font-weight: 400;
     font-size: 0.875rem;
     line-height: 1.75;
     letter-spacing: 0.02857em;
-
+    text-transform: uppercase;
+    color: #000000;
+    text-align: center;
 `
 
-export const Input = styled.input`
-margin-left: 25px;
-width: 220px;`
+export const Features = styled.li`
+text-align: left;`
 
 export const Container = styled.div`
-margin-top: 20px;`
+margin-top: 100px;`

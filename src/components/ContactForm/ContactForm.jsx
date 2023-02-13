@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-
-import { Form, FormTitle, Button, Input } from './ContactForm.styled';
+import Button from '@mui/material/Button';
+import { Form, FormTitle, Input } from './ContactForm.styled';
 import { useSelector, useDispatch } from "react-redux";
 import { addContact } from 'components/redux/contactsThunk';
 
@@ -67,7 +67,7 @@ export function ContactForm() {
                     title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                     onChange={handleChange}
                     required />
-                <Button type="submit" >
+                <Button variant="contained" type="submit" >
                     Add contact
                 </Button>
             </Form>

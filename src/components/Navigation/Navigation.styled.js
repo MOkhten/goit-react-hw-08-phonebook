@@ -33,6 +33,6 @@ font-weight: 500;
     text-overflow: ellipsis;
     white-space: nowrap;
     position: absolute;
-    top: 27px;
+    top: 44px;
     left: 450px;
 `

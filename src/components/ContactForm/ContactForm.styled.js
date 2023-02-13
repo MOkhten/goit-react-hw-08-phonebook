@@ -5,14 +5,17 @@ export const Form = styled.form`
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
-border: 1px solid lightblue;
-border-radius: 5px;
-width: 350px;
+border: 1px solid #1976d2;
+min-width: 600px;
 padding: 20px 30px;`
 
 export const FormTitle = styled.h2`
-color: grey;
-font-size: 16px;
+color: #1976d2;
+font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    letter-spacing: 0.02857em;
 display: inline-flex;
 flex-wrap: wrap;`
 
@@ -32,8 +35,10 @@ export const Input = styled.input`
 display: flex;
   justify-content: space-between;
   width: 250px;
+  
 :hover,
   :focus {
     border-color: lightblue;
     display: inline-flex;
+    color: #1976d2;
   }`
