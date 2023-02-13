@@ -7,6 +7,7 @@ import { lazy } from 'react';
 import { fetchCurrentUser } from './redux/auth/auth-operations';
 // import { useAuth } from 'hooks/useAuth';
 import { RestrictedRoute } from './RestrictedRoute';
+import { PrivateRoute } from './PrivateRoute';
 
 const LoginPage = lazy(() => import('pages/Login'));
 const RegisterPage = lazy(() => import('pages/Register'));
@@ -33,7 +34,12 @@ export function App() {
               <RestrictedRoute
                 redirectTo="/contacts"
                 component={<LoginPage />}/>} />
-        <Route path="/contacts" element={<ContactPage/>} />
+        <Route
+            path="/contacts"
+            element={
+              <PrivateRoute redirectTo="/login" component={<ContactPage />} />
+            }
+          />
         </Route>
       </Routes>
     

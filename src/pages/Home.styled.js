@@ -15,4 +15,5 @@ export const Features = styled.li`
 text-align: left;`
 
 export const Container = styled.div`
-margin-top: 100px;`
+margin-top: 100px;
+`
