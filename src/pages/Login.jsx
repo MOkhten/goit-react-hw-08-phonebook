@@ -18,7 +18,7 @@ const theme = createTheme();
 
 const Login = () => {
   
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
