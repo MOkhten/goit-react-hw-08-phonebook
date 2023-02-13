@@ -15,6 +15,24 @@ export const StyledLink = styled(NavLink)`
     margin-right: 16px;
     font-family: monospace;
     font-weight: 700;
-    
-    
 `;
+
+export const Header = styled.div`
+display: flex; 
+margin: 0 0 0 20px;
+
+font-family: "Roboto","Helvetica","Arial",sans-serif;
+font-weight: 500;
+    font-size: 0.475rem;
+    line-height: 1.75;
+    letter-spacing: 0.02857em;
+    text-transform: uppercase;
+    min-width: 64px;
+    padding: 6px 8px;
+    border-radius: 4px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: absolute;
+    top: 27px;
+    left: 450px;
+`

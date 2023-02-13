@@ -8,29 +8,134 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
+// import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-// import { Header, Container } from './AppBar.styled.js';
-// import { Loader } from 'components/Loader.js';
 import AuthNav from '../NavLink/NavLink.jsx';
 import UserMenu from 'components/UserMenu/UserMenu.jsx';
 import { useAuth } from 'hooks/useAuth.js';
 import Navigation from 'components/Navigation/Navigation.jsx';
+import { Link } from 'react-router-dom';
 
-// const pages = ['Home', 'Login', 'Register'];
-//  const settings = ['Home', 'Login', 'Register'];
 
 
 const ResponsiveAppBar = () => {
   const { isLoggedIn } = useAuth();
+
+  const pages = [{  title: 'PHONEBOOK' }];
   
 
-    return (
+  return (
+  //     <AppBar position="static">
+  //     <Container maxWidth="xl">
+  //       <Toolbar disableGutters>
+  //         <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+  //         <Typography
+  //           variant="h6"
+  //           noWrap
+  //           component="a"
+  //           href="/"
+  //           sx={{
+  //             mr: 2,
+  //             display: { xs: 'none', md: 'flex' },
+  //             fontFamily: 'monospace',
+  //             fontWeight: 700,
+  //             letterSpacing: '.3rem',
+  //             color: 'inherit',
+  //             textDecoration: 'none',
+  //           }}
+  //         >
+  //           PHONEBOOK
+  //         </Typography>
+
+  //         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+  //           <IconButton
+  //             size="large"
+  //             aria-label="account of current user"
+  //             aria-controls="menu-appbar"
+  //             aria-haspopup="true"
+             
+  //             color="inherit"
+  //           >
+  //             <MenuIcon />
+  //           </IconButton>
+  //           <Menu
+  //             id="menu-appbar"
+             
+  //             anchorOrigin={{
+  //               vertical: 'bottom',
+  //               horizontal: 'left',
+  //             }}
+  //             keepMounted
+  //             transformOrigin={{
+  //               vertical: 'top',
+  //               horizontal: 'left',
+  //             }}
+              
+  //             sx={{
+  //               display: { xs: 'block', md: 'none' },
+  //             }}
+  //           >
+  //             {pages.map((page) => (
+  //               <MenuItem key={page} >
+  //                 <Typography textAlign="center">{page.title}</Typography>
+  //               </MenuItem>
+  //             ))}
+  //           </Menu>
+  //         </Box>
+  //         <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+  //         <Typography
+  //           variant="h5"
+  //           noWrap
+  //           component="a"
+  //           href=""
+  //           sx={{
+  //             mr: 2,
+  //             display: { xs: 'flex', md: 'none' },
+  //             flexGrow: 1,
+  //             fontFamily: 'monospace',
+  //             fontWeight: 700,
+  //             letterSpacing: '.3rem',
+  //             color: 'inherit',
+  //             textDecoration: 'none',
+  //           }}
+  //         >
+  //           PHONEBOOK
+  //         </Typography>
+         
+
+  //         <Box sx={{ flexGrow: 0 }}>
+          
+  //           <Menu
+  //             sx={{ mt: '45px' }}
+  //             id="menu-appbar"
+              
+  //             anchorOrigin={{
+  //               vertical: 'top',
+  //               horizontal: 'right',
+  //             }}
+  //             keepMounted
+  //             transformOrigin={{
+  //               vertical: 'top',
+  //               horizontal: 'right',
+  //             }}
+             
+  //           >
+              
+  //           </Menu>
+  //            {isLoggedIn ? <UserMenu /> : <AuthNav />}
+  //         </Box>
+  //       </Toolbar>
+  //       <Navigation />
+  //     </Container>
+  //   </AppBar>
+  // );
        <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography
+            <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+            
+            <Typography
+              
             variant="h6"
             noWrap
             component="a"
@@ -44,9 +149,18 @@ const ResponsiveAppBar = () => {
               color: 'inherit',
               textDecoration: 'none',
             }}
-          >
-            PHONEBOOK
-          </Typography>
+            >
+              {pages.map((page) => (
+                <Button component={Link} to = '/'
+                key={page}
+                
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                {page.title}
+              </Button>
+            ))}
+             
+          </Typography> 
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -77,11 +191,7 @@ const ResponsiveAppBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {/* {pages.map((page) => (
-                <MenuItem key={page} >
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))} */}
+            
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -101,26 +211,19 @@ const ResponsiveAppBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            PHONEBOOK
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {/* {pages.map((page) => (
-              <Button
-                key={page}
-                
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))} */}
           </Box>
 
-           {isLoggedIn ? <UserMenu /> : <AuthNav />}
-          </Toolbar>
+          {isLoggedIn ? <UserMenu /> : <AuthNav />} 
           
+          </Toolbar>
+           
 <Navigation />
      
       </Container>
+       
     </AppBar>
 
 )

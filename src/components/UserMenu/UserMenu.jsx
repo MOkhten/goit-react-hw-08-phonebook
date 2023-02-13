@@ -2,6 +2,8 @@ import { useDispatch } from 'react-redux';
 import { logOut } from 'components/redux/auth/auth-operations';
 import { useAuth } from 'hooks/useAuth';
 import { ImUserCheck } from "react-icons/im";
+import { Title, Button } from './UserMenu.styled';
+
 
 const UserMenu = () => {
     const dispatch = useDispatch();
@@ -9,9 +11,9 @@ const UserMenu = () => {
 
   return (
     <div display='flex'>
-      <h1>Welcome, {user.name}</h1>
-      <ImUserCheck color='#111111' size='24px'/>
-      <button type="button" onClick={() => dispatch(logOut())}>Logout</button>
+      <Title>Welcome, {user.name}</Title>
+      <ImUserCheck color='#FFFFFF' size='24px'  />
+      <Button onClick={() => dispatch(logOut())}>Logout</Button>
     </div>
   );
 };
