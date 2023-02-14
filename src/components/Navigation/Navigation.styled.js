@@ -12,15 +12,18 @@ export const StyledLink = styled(NavLink)`
     text-overflow: ellipsis;
     white-space: nowrap;
     color:  #FFFFFF;
-    margin-right: 16px;
+    margin: 0 0 20px 20px;
     font-family: monospace;
     font-weight: 700;
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+    
 `;
 
 export const Header = styled.div`
 display: flex; 
 margin: 0 0 0 20px;
-
+/* position: relative; */
 font-family: "Roboto","Helvetica","Arial",sans-serif;
 font-weight: 500;
     font-size: 0.475rem;
@@ -32,7 +35,5 @@ font-weight: 500;
     border-radius: 4px;
     text-overflow: ellipsis;
     white-space: nowrap;
-    position: absolute;
-    top: 44px;
-    left: 450px;
+    
 `

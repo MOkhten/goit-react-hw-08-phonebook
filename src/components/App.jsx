@@ -5,7 +5,6 @@ import Home from 'pages/Home';
 import Layout from './Layout';
 import { lazy } from 'react';
 import { fetchCurrentUser } from './redux/auth/auth-operations';
-// import { useAuth } from 'hooks/useAuth';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 
@@ -16,25 +15,24 @@ const ContactPage = lazy(() => import('pages/Contacts'));
 
 export function App() {
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
     dispatch(fetchCurrentUser());
   }, [dispatch]);
   
   return (
-    
-   <Routes>
+      <Routes>
         <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="/register" element={<RestrictedRoute
-                redirectTo="/contacts"
-                component={<RegisterPage />}/>} />
-        <Route  path="/login"
+          <Route index element={<Home />} />
+          <Route path="/register" element={<RestrictedRoute
+            redirectTo="/contacts"
+            component={<RegisterPage />} />} />
+          <Route path="/login"
             element={
               <RestrictedRoute
                 redirectTo="/contacts"
-                component={<LoginPage />}/>} />
-        <Route
+                component={<LoginPage />} />} />
+          <Route
             path="/contacts"
             element={
               <PrivateRoute redirectTo="/login" component={<ContactPage />} />
@@ -42,7 +40,6 @@ export function App() {
           />
         </Route>
       </Routes>
-    
-    )
+  );
 
 }

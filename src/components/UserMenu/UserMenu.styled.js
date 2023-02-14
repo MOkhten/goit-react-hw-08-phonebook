@@ -12,7 +12,7 @@ export const Button = styled.button`
     justify-content: center;
     position: relative;
     box-sizing: border-box;
-    margin: 0 0 30px 20px;
+    margin: 0 0 0 20px;
     cursor: pointer;
     text-decoration: none;
     background-color: white;
@@ -27,5 +27,7 @@ export const Button = styled.button`
     padding: 5px 15px;
     border-radius: 4px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    color: #1976d2;`
+    color: #1976d2;
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);`
 
