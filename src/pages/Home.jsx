@@ -17,9 +17,6 @@ Features:
         <Features>Find the contact</Features>
       </ul>
       </Title>
-      {/* <span role="img" aria-label="Иконка приветствия">
-        💁‍♀️
-      </span> */}
     
   </Container>
 );

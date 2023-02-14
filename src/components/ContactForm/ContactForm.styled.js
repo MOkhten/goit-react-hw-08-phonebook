@@ -6,7 +6,7 @@ export const Form = styled.form`
   align-items: flex-start;
   gap: 16px;
 border: 1px solid #1976d2;
-min-width: 600px;
+min-width: 380px;
 padding: 20px 30px;`
 
 export const FormTitle = styled.h2`

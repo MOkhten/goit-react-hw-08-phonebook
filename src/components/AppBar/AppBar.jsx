@@ -113,15 +113,17 @@ const ResponsiveAppBar = () => {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
           </Box>
 
-          {isLoggedIn ? <UserMenu /> : <AuthNav />} 
+          { isLoggedIn ? <UserMenu /> : <AuthNav /> } 
           
           </Toolbar>
            
-<Navigation />
-     
+
       </Container>
-       
+      
+  <Navigation />
     </AppBar>
+     
+     
 
 )
 };
